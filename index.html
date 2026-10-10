@@ -4,43 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Townsite Tech — Technology consultant in Kimberley BC</title>
-  <meta name="description" content="Townsite Tech: one-stop shop to get your IT stuff to work and find out what's possible. Technology consultant in Kimberley, BC.">
-  <link rel="icon" type="image/png" href="assets/townsitetech-logo.png">
+  <meta name="description" content="Townsite Tech: get your IT stuff to work and find out what's possible. Technology consultant in Kimberley, BC.">
+  <meta property="og:title" content="Townsite Tech — Technology consultant in Kimberley BC">
+  <meta property="og:image" content="assets/logo-square.png">
+  <link rel="icon" type="image/png" href="assets/logo-square-700.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- shared power-symbol definition -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="pwr">
+        <path d="M10.26 23.19 A10 10 0 1 1 21.74 23.19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M16 13.5 V26.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+      </g>
+    </defs>
+  </svg>
+
   <main>
 
-    <!-- Hero -->
-    <header class="hero embossed">
-      <div class="logoholder" role="img" aria-label="Townsite Tech logo"></div>
-      <h1>Technology consultant in Kimberley BC</h1>
-      <p class="tagline">Solve your problems.</p>
-      <p class="tagline">Get your IT stuff to work.<br>Find out what's possible.</p>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="logo-wrap">
+        <img src="assets/logo-square.png"
+             srcset="assets/logo-square-700.png 700w, assets/logo-square.png 2205w"
+             sizes="(max-width: 900px) 92vw, 52vw"
+             alt="Townsite Tech logo">
+      </div>
+      <div class="hero-copy">
+        <h1>Technology consultant<br>in Kimberley BC</h1>
+        <p class="line-big">Solve your problems.</p>
+        <p class="line-mid">Get your IT stuff to work.<br>Find out what&rsquo;s possible.</p>
+      </div>
+      <div class="side-label" aria-hidden="true">Kimberley · BC</div>
     </header>
 
-    <section class="embossed">
-      <p class="quote">&ldquo;so much is so easy to do with modern tech nowadays<br>
-      but sometimes you want to hire someone who has figured it out already&rdquo;</p>
+    <!-- QUOTE -->
+    <section class="quote reveal">
+      <p>&ldquo;so much is so easy to do with modern tech nowadays<br>
+      <em>but sometimes you want to hire someone who has figured it out already&rdquo;</em></p>
     </section>
 
-    <!-- Services -->
-    <section class="embossed">
-      <div class="card-grid">
-        <div class="raised"><h3>IT support</h3></div>
-        <div class="raised"><h3>set up office stuff</h3></div>
-        <div class="raised"><h3>custom websites</h3></div>
-        <div class="raised"><h3>vibe-coded custom apps</h3></div>
+    <!-- SERVICES -->
+    <section class="services">
+      <div class="bento">
+        <div class="tile big reveal"><svg class="mark"><use href="#pwr"/></svg><h3>IT support</h3></div>
+        <div class="tile big reveal"><svg class="mark"><use href="#pwr"/></svg><h3>network that works</h3></div>
+        <div class="tile small reveal"><svg class="mark"><use href="#pwr"/></svg><h3>office stuff</h3></div>
+        <div class="tile small reveal"><svg class="mark"><use href="#pwr"/></svg><h3>custom websites</h3></div>
+        <div class="tile small reveal"><svg class="mark"><use href="#pwr"/></svg><h3>vibe-coded apps</h3></div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact embossed">
+    <!-- CONTACT -->
+    <section class="contact reveal">
       <p class="email">townsitetech [at] gmail [dot] com</p>
-      <a class="button" id="mail-button" href="#">send an email</a>
+      <a class="button" id="mail-button" href="#">
+        <svg class="mark"><use href="#pwr"/></svg>
+        send an email
+      </a>
     </section>
 
     <footer>
@@ -48,12 +74,19 @@
     </footer>
 
   </main>
+
   <script>
     document.getElementById('mail-button').addEventListener('click', function (e) {
       e.preventDefault();
       window.location.href = 'mailto:' + 'townsitetech' + '@' + 'gmail' + '.com';
     });
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // gentle reveal on scroll
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>
 </html>
