@@ -136,10 +136,9 @@ main {
 /* ---------- quote ---------- */
 
 .quote {
-  padding: var(--sp-3xl) 0;
+  padding: var(--sp-2xl) 0;
   border-top: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
-  margin-top: var(--sp-3xl);
+  margin-top: var(--sp-xl);
 }
 
 .quote p {
