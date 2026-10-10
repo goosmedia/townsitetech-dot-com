@@ -142,20 +142,14 @@ main {
 }
 
 .quote p {
-  max-width: 880px;
+  max-width: 760px;
   margin: 0 auto;
-  font-size: clamp(22px, 3.4vw, 40px);
+  text-align: center;
+  font-size: clamp(17px, 2.2vw, 26px);
   font-weight: 300;
-  line-height: 1.35;
+  line-height: 1.5;
   letter-spacing: 0.005em;
   color: var(--ink-mute);
-}
-
-.quote em {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--ink);
-  text-shadow: 0 0 26px rgba(255, 255, 255, 0.28);
 }
 
 /* ---------- services / bento ---------- */
@@ -192,12 +186,31 @@ main {
 .tile.big   { grid-column: span 3; }
 .tile.small { grid-column: span 2; }
 
+.tile-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-s);
+}
+
 .tile h3 {
   margin: 0;
-  padding-right: var(--sp-xl);
   font-size: clamp(19px, 2vw, 24px);
   font-weight: 400;
   letter-spacing: 0.01em;
+}
+
+.tile .icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.35s ease, filter 0.35s ease;
+}
+
+.tile:hover .icon,
+.tile:focus-within .icon {
+  color: #fff;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
 }
 
 /* hidden one-liner: expands open like a curtain on hover/focus */
@@ -225,21 +238,6 @@ main {
   grid-template-rows: 1fr;
   opacity: 1;
   margin-top: var(--sp-s);
-}
-
-.tile .mark {
-  position: absolute;
-  top: var(--sp-l);
-  right: var(--sp-l);
-  width: 26px;
-  height: 26px;
-  color: rgba(255, 255, 255, 0.35);
-  transition: color 0.35s ease, filter 0.35s ease;
-}
-
-.tile:hover .mark {
-  color: #fff;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.9));
 }
 
 /* ---------- contact ---------- */

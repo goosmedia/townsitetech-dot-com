@@ -15,13 +15,41 @@
 </head>
 <body>
 
-  <!-- shared power-symbol definition -->
+  <!-- shared icon symbols -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
-      <g id="pwr">
+      <symbol id="pwr" viewBox="0 0 32 32">
         <path d="M10.26 23.19 A10 10 0 1 1 21.74 23.19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
         <path d="M16 13.5 V26.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
-      </g>
+      </symbol>
+        <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </symbol>
+        <symbol id="i-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+          <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+          <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+          <circle cx="12" cy="20" r="0.4" fill="currentColor"/>
+        </symbol>
+        <symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9V3h12v6"/>
+          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+          <path d="M6 14h12v7H6z"/>
+        </symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+        </symbol>
+        <symbol id="i-robot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="5" y="9" width="14" height="11" rx="2.5"/>
+          <path d="M12 5.5V9"/>
+          <circle cx="12" cy="4" r="1.5"/>
+          <circle cx="9.3" cy="13.8" r="0.4" fill="currentColor"/>
+          <circle cx="14.7" cy="13.8" r="0.4" fill="currentColor"/>
+          <path d="M9.5 17.3h5"/>
+          <path d="M3 13v3"/>
+          <path d="M21 13v3"/>
+        </symbol>
     </defs>
   </svg>
 
@@ -49,28 +77,23 @@
     <section class="services">
       <div class="bento">
         <div class="tile big reveal" tabindex="0">
-          <svg class="mark"><use href="#pwr"/></svg>
-          <h3>IT support</h3>
+          <div class="tile-head"><svg class="icon"><use href="#i-gear"/></svg><h3>IT support</h3></div>
           <div class="tile-body"><div><p>whatever tech you need.</p></div></div>
         </div>
         <div class="tile big reveal" tabindex="0">
-          <svg class="mark"><use href="#pwr"/></svg>
-          <h3>network that works</h3>
+          <div class="tile-head"><svg class="icon"><use href="#i-wifi"/></svg><h3>network that works</h3></div>
           <div class="tile-body"><div><p>WiFi ethernet LAN or WAN.</p></div></div>
         </div>
         <div class="tile small reveal" tabindex="0">
-          <svg class="mark"><use href="#pwr"/></svg>
-          <h3>office stuff</h3>
+          <div class="tile-head"><svg class="icon"><use href="#i-printer"/></svg><h3>office stuff</h3></div>
           <div class="tile-body"><div><p>from printers to spreadsheets</p></div></div>
         </div>
         <div class="tile small reveal" tabindex="0">
-          <svg class="mark"><use href="#pwr"/></svg>
-          <h3>custom websites</h3>
+          <div class="tile-head"><svg class="icon"><use href="#i-cloud"/></svg><h3>custom websites</h3></div>
           <div class="tile-body"><div><p>free, subscription, or self-hosted ways to get online</p></div></div>
         </div>
         <div class="tile small reveal" tabindex="0">
-          <svg class="mark"><use href="#pwr"/></svg>
-          <h3>apps and scripts</h3>
+          <div class="tile-head"><svg class="icon"><use href="#i-robot"/></svg><h3>apps and scripts</h3></div>
           <div class="tile-body"><div><p>vibe-coded custom apps or scripts/workflows to get repeated tasks done quicker</p></div></div>
         </div>
       </div>
@@ -78,8 +101,7 @@
 
     <!-- QUOTE -->
     <section class="quote reveal">
-      <p>&ldquo;so much is so easy to do with modern tech nowadays<br>
-      <em>but sometimes you want to hire someone who has figured it out already&rdquo;</em></p>
+      <p>&ldquo;so much is so easy to do with modern tech nowadays but sometimes you want to hire someone who has figured it out already&rdquo;</p>
     </section>
 
     <!-- CONTACT -->
